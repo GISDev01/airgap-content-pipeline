@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Docker Images - AirGapCMS{% endblock %}
+
+{% block content %}
+
+    <h2>Docker Images</h2>
+
+    <h3>Pending</h3>
+    <ul>
+        {% for object in book_docker_image_pending_list %}
+            <li>{{ object.image }}:{{ object.tag }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Pulled</h3>
+    <ul>
+        {% for object in book_docker_image_pulled_list %}
+            <li>{{ object.image }}:{{ object.tag }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Pipelined</h3>
+    <ul>
+        {% for object in book_docker_image_pipelined_list %}
+            <li>{{ object.image }}:{{ object.tag }}</li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
